@@ -30,4 +30,6 @@ def egyjegyuek_szama(lista = []):
 def file_kiir(egyjegyu):
     with open("szamok.txt", "w", encoding="UTF-8") as f:
        f.write(f"\tAz egyjegyűek száma: {egyjegyu}.")
+       f.close()
+
    

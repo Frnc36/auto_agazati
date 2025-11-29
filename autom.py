@@ -28,6 +28,22 @@ def flotta(lista = []):
     return db
 
 def legfiatalabb(lista = []):
-    i = 0
+    if len(lista):
+        legfiatalabb_auto = lista[0]
+        i = 1 #második autótól kezdjük
+        while i < len(lista):
+            if lista[i].gyartasi_datum > legfiatalabb_auto.gyartasi_datum:
+                legfiatalabb_auto = lista[i]
+            i += 1
+    return legfiatalabb_auto
+
+
+def atlag_kor(lista = []):
+    osszeg = 0
+    i = 0 
     while i < len(lista):
-        
+        osszeg += 2025-int(lista[i].gyartasi_datum)
+        i += 1
+    
+    atlag = osszeg / len(lista)
+    print(f"\tÁtlagos kor: {atlag:.2f} év.")
